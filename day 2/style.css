@@ -117,3 +117,19 @@ th {
   text-align: right;
   padding: 0 5px;
 }
+th.value {
+  min-width: 4ch;
+}
+
+button#clear {
+  padding: 5px 10px;
+  margin-top: 15px;
+  background: #4a4862;
+  font-size: 14px;
+  color: white;
+  transition: 0.3s background;
+}
+button#clear:hover {
+  background-color: #fff;
+  color: #242333;
+}

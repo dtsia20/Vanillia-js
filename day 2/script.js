@@ -2,6 +2,7 @@ const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.row .seat:not(.occupied)');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
+const clear = document.getElementById('clear');
 const movieSelect = document.getElementById('movie');
 
 populateUI();
@@ -14,6 +15,8 @@ function setMovieData(movieIndex, moviePrice) {
     localStorage.setItem('selectedMovieIndex', movieIndex);
     localStorage.setItem('selectedMoviePrice', moviePrice);
 }
+
+
 
 //update count and total
 function updateSelectCount() {
@@ -65,6 +68,14 @@ container.addEventListener('click', e=> {
 
     updateSelectCount();
 })
-
+//clear all selection seats
+clear.addEventListener('click', e=> {
+  const selectedSeatsAll = document.querySelectorAll('.row .seat.selected');
+  selectedSeatsAll.forEach((seat) => {
+    seat.classList.remove("selected");
+  });
+  count.innerText = 0;
+  total.innerText = 0;
+})
 // Initial count and total
 updateSelectCount();
