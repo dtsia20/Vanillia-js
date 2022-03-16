@@ -76,6 +76,7 @@ clear.addEventListener('click', e=> {
   });
   count.innerText = 0;
   total.innerText = 0;
+  localStorage.clear();
 })
 // Initial count and total
 updateSelectCount();
