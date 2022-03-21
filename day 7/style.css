@@ -94,7 +94,7 @@
     text-align: center;
   }
   
-  .popup button {
+  .popup button, #start {
     cursor: pointer;
     background-color: #fff;
     color: #2980b9;

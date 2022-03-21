@@ -5,29 +5,26 @@ const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
 const finalMessageRevealWord = document.getElementById('final-message-reveal-word');
+const start = document.getElementById('start');
 
 const figureParts = document.querySelectorAll('.figure-part');
 
-const words = ['application', 'programming', 'interface', 'wizard'];
-
-let selectedWord = words[Math.floor(Math.random() * words.length)];
+let selectedWord = 'a';
 
 let playable = true;
 
 const correctLetters = [];
 const wrongLetters = [];
 
-// getWords();
+getWords();
 
 // // Get a random word and displayed
-// async function getWords() {
-//     let selectedWord = '3';
-//     const res = await fetch(`https://random-word-api.herokuapp.com/word?number=1`);
-//     const data = await res.json();
-//     selectedWord = data[0];
-//     console.log(selectedWord);
+function getWords() {
+    fetch(`https://random-word-api.herokuapp.com/word?number=1`)
+    .then(res => res.json())
+    .then(data => selectedWord = data[0])
    
-// };
+};
 
 
 
@@ -130,13 +127,24 @@ playAgainBtn.addEventListener('click', () => {
 	correctLetters.splice(0);
 	wrongLetters.splice(0);
 
-	selectedWord = words[Math.floor(Math.random() * words.length)];
-
-	displayWord();
+	getWords();
 
 	updateWrongLettersEl();
 
 	popup.style.display = 'none';
+
+	wordEl.style.visibility = 'hidden';
+
+	
+
+	
+
 });
 
-displayWord();
+start.addEventListener('click', () => {
+	
+	displayWord();
+
+	wordEl.style.visibility = 'visible';
+
+});
