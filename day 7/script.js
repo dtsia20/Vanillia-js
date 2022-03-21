@@ -15,10 +15,10 @@ let playable = true;
 const correctLetters = [];
 const wrongLetters = [];
 
-getWords();
+getWord();
 
 // // Get a random word and displayed
-function getWords() {
+function getWord() {
     fetch(`https://random-word-api.herokuapp.com/word?number=1`)
     .then(res => res.json())
     .then(data => selectedWord = data[0])
@@ -130,7 +130,7 @@ playAgainBtn.addEventListener('click', () => {
 	correctLetters.splice(0);
 	wrongLetters.splice(0);
 
-	getWords();
+	getWord();
 	
 	updateWrongLettersEl();
 
