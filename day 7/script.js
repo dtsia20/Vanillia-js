@@ -5,7 +5,6 @@ const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
 const finalMessageRevealWord = document.getElementById('final-message-reveal-word');
-const start = document.getElementById('start');
 
 const figureParts = document.querySelectorAll('.figure-part');
 
@@ -23,6 +22,9 @@ function getWords() {
     fetch(`https://random-word-api.herokuapp.com/word?number=1`)
     .then(res => res.json())
     .then(data => selectedWord = data[0])
+
+	setTimeout(function(){ displayWord() }, 600);
+	
    
 };
 
@@ -30,6 +32,7 @@ function getWords() {
 
 // Show hidden word
 function displayWord() {
+	
 	wordEl.innerHTML = `
     ${selectedWord
 			.split('')
@@ -128,23 +131,9 @@ playAgainBtn.addEventListener('click', () => {
 	wrongLetters.splice(0);
 
 	getWords();
-
+	
 	updateWrongLettersEl();
 
 	popup.style.display = 'none';
-
-	wordEl.style.visibility = 'hidden';
-
 	
-
-	
-
-});
-
-start.addEventListener('click', () => {
-	
-	displayWord();
-
-	wordEl.style.visibility = 'visible';
-
 });
