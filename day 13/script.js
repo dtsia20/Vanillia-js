@@ -24,7 +24,7 @@ const data = [
         text: "I'm Hurt"
       },
       {
-        image: './img/happy.jpg',
+        image: './img/happy.png',
         text: "I'm Happy"
       },
       {
@@ -54,6 +54,10 @@ const data = [
       {
         image: './img/grandma.jpg',
         text: 'I Want To Go To Grandmas'
+      },
+      {
+        image: './img/vacation.jpg',
+        text: 'I want to go vacations'
       }
 ]
 
