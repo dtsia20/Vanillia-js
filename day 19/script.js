@@ -65,7 +65,7 @@ function createList() {
         listItem.innerHTML = `
             <span class="number"> ${index + 1}</span>
             <div class="draggable" draggable="true">
-                <p><span class="car-name">${fastestCar.car}</span> <span class="speed"></span></p>
+                <p><span class="car-name">${fastestCar.car}</span> <span class="speed">${fastestCar.speed}</span></p>
                 <i class="fas fa-grip-lines"></i>
             </div>    
         `;
@@ -137,18 +137,17 @@ function swapItems(fromIndex, toIndex) {
   // Check the order of list items
 function checkOrder() {
   listItems.forEach((listItem, index) => {
-    const speed = listItem.getAttribute('data-speed');
     const speedCon = listItem.querySelector('.speed');
     const carName = listItem.querySelector('.car-name').innerText.trim();
 
     console.log(carName);
     if (carName !== fastestCars[index].car) {
         listItem.classList.add('wrong');
-        speedCon.innerText = '';
+        speedCon.style.visibility = 'hidden';
     } else {
         listItem.classList.remove('wrong');
         listItem.classList.add('right');
-        speedCon.innerText =' (' + speed + ')';
+        speedCon.style.visibility = 'visible';
     }
   });
 }
