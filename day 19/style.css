@@ -67,6 +67,7 @@ body {
 span.speed {
     font-weight: 700;
     color: #005d99;
+    visibility: hidden;
 }
 .draggable {
   cursor: pointer;
