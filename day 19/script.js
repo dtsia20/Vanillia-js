@@ -96,7 +96,7 @@ function addEventListeners() {
 function dragStart() {
     // console.log('Event: ', 'dragstart');
     dragStartIndex = +this.closest('li').getAttribute('data-index');
-    console.log(dragStartIndex);
+    // console.log(dragStartIndex);
   }
   
   function dragEnter() {
@@ -117,7 +117,7 @@ function dragStart() {
   function dragDrop() {
     // console.log('Event: ', 'drop');
     const dragEndIndex = +this.getAttribute('data-index');
-    console.log(dragEndIndex);
+    // console.log(dragEndIndex);
     swapItems(dragStartIndex, dragEndIndex);
   
     this.classList.remove('over');
@@ -140,7 +140,6 @@ function checkOrder() {
     const speedCon = listItem.querySelector('.speed');
     const carName = listItem.querySelector('.car-name').innerText.trim();
 
-    console.log(carName);
     if (carName !== fastestCars[index].car) {
         listItem.classList.add('wrong');
         speedCon.style.visibility = 'hidden';
