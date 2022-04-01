@@ -130,6 +130,8 @@ function swapItems(fromIndex, toIndex) {
   
     listItems[fromIndex].appendChild(itemTwo);
     listItems[toIndex].appendChild(itemOne);
+
+    checkOrder();
   }
 
   // Check the order of list items
